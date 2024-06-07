@@ -28,7 +28,7 @@ Whole mode: This mode ignores the mode of operation described above in favor of 
 
 This pipeline utilzies the Evolutionary Scale Model (ESM) to both create seequnces, predict structures, and find conserved residues in situ and in silico. 
 
-![til](./calmodulin_design_pepstreaml.gif)
+![til](./calmodulin_design_pepsteaml.gif)
 
 ### Usage
 
