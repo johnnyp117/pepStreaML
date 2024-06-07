@@ -65,18 +65,18 @@ Output Generation: Outputs the final optimized sequence in both PDB and FASTA fo
 
 ### The energy scores currently used in optimization (inside ./language/energy.py):
 
-MaximizePTM()
-	- Perplexity of sequence
-MaximizePLDDT()
-	- goodness of structure from ESMFold (OpenFold)
-MinimizeSurfaceHydrophobics()
-	- hydrophobic_score and surface_ratio
-MinimizeSurfaceExposure()
-	- surface_ratio
-MaximizeGlobularity()
-	- globularity from centroid
-MinimizeTargetDistance
-	- distance between target residues or considerved residues and peptide
+MaximizePTM() <br>
+	- Perplexity of sequence <br>
+MaximizePLDDT() <br>
+	- goodness of structure from ESMFold (OpenFold) <br>
+MinimizeSurfaceHydrophobics() <br>
+	- hydrophobic_score and surface_ratio <br>
+MinimizeSurfaceExposure() <br>
+	- surface_ratio <br>
+MaximizeGlobularity() <br>
+	- globularity from centroid <br>
+MinimizeTargetDistance <br>
+	- distance between target residues or considerved residues and peptide <br>
 
 ## Installation !!Work in Progress, untested!!
 
