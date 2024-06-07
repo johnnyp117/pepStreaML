@@ -78,7 +78,7 @@ MaximizeGlobularity()
 MinimizeTargetDistance
 	- distance between target residues or considerved residues and peptide
 
-## Installation
+## Installation !!Work in Progress, untested!!
 
 ### Using pip
 
