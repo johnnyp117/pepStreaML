@@ -32,7 +32,7 @@ This pipeline utilzies the Evolutionary Scale Model (ESM) to both create seequnc
 
 python pepstream.py -i [PDB_ID] -c [CHAIN] -b [BINDING_SITE] -n [SAMPLES] -t [TEMPERATURE_RANGE] -s [STEPS] -o [OUTPUT_NAME] -z [DESIGN_NUM]
 
-
+"""
 ### Command-Line Arguments:
 -i, --input: Specifies the input PDB structure file to be downloaded.
 -u, --uniprot: Specifies the UniProt ID to search for an associates AlphaFold structure to be downloaded.
@@ -48,7 +48,7 @@ python pepstream.py -i [PDB_ID] -c [CHAIN] -b [BINDING_SITE] -n [SAMPLES] -t [TE
 -m, --mode: Mode of operation - "whole" or "target" for structure design optimization. Default is "target".
 -z, --num_designs: Number of designs to generate. Default is 2.
 --diversify: Enable or disable diversification of target structure. Default is False.
-
+"""
 
 ### Steps:
 
