@@ -1,7 +1,7 @@
 pepStreaML Documentation
-Author : John Patterson
+Author : John Patterson (JP)
 
-### Related works
+### Related works used to build this package
 
 https://github.com/facebookresearch/esm
 https://github.com/aqlaboratory/openfold
@@ -28,35 +28,40 @@ Whole mode: This mode ignores the mode of operation described above in favor of 
 
 This pipeline utilzies the Evolutionary Scale Model (ESM) to both create seequnces, predict structures, and find conserved residues in situ and in silico. 
 
+![til](./calmodulin_design_pepstreaml.gif)
+
 ### Usage
 
 python pepstream.py -i [PDB_ID] -c [CHAIN] -b [BINDING_SITE] -n [SAMPLES] -t [TEMPERATURE_RANGE] -s [STEPS] -o [OUTPUT_NAME] -z [DESIGN_NUM]
 
-"""
-### Command-Line Arguments:
--i, --input: Specifies the input PDB structure file to be downloaded.
--u, --uniprot: Specifies the UniProt ID to search for an associates AlphaFold structure to be downloaded.
--c, --chain: Specifies the chain of the input receptor PDB structure.
--o, --output: Name of the output CSV file, directory, and naming for predictions.
--n, --num_samples: Number of sequences generated per temperature inside the ESM-IF model. Default is 10.
--t, --temperature: Specifies the temperature range in the format (start, end, step) for the ESM-IF model.
--e, --design_temp: The initial temperature for simulated annealing used in optimization. Default is 1.0.
--b, --binding-site: Binding site residue indices, can parse discontinous sites with a comma "," (ex. 10-20,40-50).
--a, --rate: Annealing rate for simulated annealing of peptide sequence during optimization. Default is 0.97.
--s, --steps: Total number of steps for optimization. Default is 10000.
--d, --display: Flag to indicate whether to display progress or not. Default is True.
--m, --mode: Mode of operation - "whole" or "target" for structure design optimization. Default is "target".
--z, --num_designs: Number of designs to generate. Default is 2.
---diversify: Enable or disable diversification of target structure. Default is False.
-"""
+
+### Command-Line Arguments: 
+##### -i, --input: Specifies the input PDB structure file to be downloaded.
+##### -u, --uniprot: Specifies the UniProt ID to search for an associates AlphaFold structure to be downloaded.
+##### -c, --chain: Specifies the chain of the input receptor PDB structure.
+##### -o, --output: Name of the output CSV file, directory, and naming for predictions.
+##### -n, --num_samples: Number of sequences generated per temperature inside the ESM-IF model. Default is 10.
+##### -t, --temperature: Specifies the temperature range in the format (start, end, step) for the ESM-IF model.
+##### -e, --design_temp: The initial temperature for simulated annealing used in optimization. Default is 1.0.
+##### -b, --binding-site: Binding site residue indices, can parse discontinous sites with a comma "," (ex. 10-20,40-50).
+##### -a, --rate: Annealing rate for simulated annealing of peptide sequence during optimization. Default is 0.97.
+##### -s, --steps: Total number of steps for optimization. Default is 10000.
+##### -d, --display: Flag to indicate whether to display progress or not. Default is True.
+##### -m, --mode: Mode of operation - "whole" or "target" for structure design optimization. Default is "target".
+##### -z, --num_designs: Number of designs to generate. Default is 2.
+##### --diversify: Enable or disable diversification of target structure. Default is False.
+
 
 ### Steps:
 
-Input Parsing and Validation: Collects and validates user input.
-Data Preparation: If given a UniProt ID, it fetches the corresponding structure; otherwise, it uses the provided PDB file. It then derives atom and sequence information from the structure.
-ESM-IF Diversification: Performs the Inverse Folding method using ESM to diversify the given structure.
-Sequence Optimization: Depending on the mode ("target" or "whole"), it optimizes the sequence to be close to the target site and also optimizes its energy stability. Optimization utilizes scores (called Energies) that are the response of the sequence mutation and subseqeut structure prediction. At this time these are not exposed to the user interface. 
-Output Generation: Outputs the final optimized sequence in both PDB and FASTA formats.
+Input Parsing and Validation: Collects and validates user input. <br>
+Data Preparation: If given a UniProt ID, it fetches the corresponding structure; otherwise, it uses the provided PDB file. It then derives atom and sequence information from the structure. <br>
+
+ESM-IF Diversification: Performs the Inverse Folding method using ESM to diversify the given structure.  <br>
+
+Sequence Optimization: Depending on the mode ("target" or "whole"), it optimizes the sequence to be close to the target site and also optimizes its energy stability. Optimization utilizes scores (called Energies) that are the response of the sequence mutation and subseqeut structure prediction. At this time these are not exposed to the user interface.  <br>
+
+Output Generation: Outputs the final optimized sequence in both PDB and FASTA formats. <br>
 
 ### The energy scores currently used in optimization (inside ./language/energy.py):
 
