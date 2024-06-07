@@ -26,7 +26,7 @@ The tool provides two modes of operation:
 Target mode: This mode uses conserved residues inside the user's selected residues. The residues can be discontinuous. <br>
 Whole mode: This mode ignores the mode of operation described above in favor of the subtarget specified by the user.
 
-This pipeline utilzies the Evolutionary Scale Model (ESM) to both create seequnces, predict structures, and find conserved residues in situ and in silico. 
+This pipeline utilzies the Evolutionary Scale Model (ESM) to both create seequnces, predict structures, and find conserved residues in situ. 
 
 ![til](./calmodulin_design_pepsteaml.gif)
 
