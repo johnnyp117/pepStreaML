@@ -91,3 +91,9 @@ pip install pepStreaML
 
 conda env create -f environment.yml
 conda activate pepStreaML
+```
+## To Do:
+- Add energies calculated from openmm
+- Add active learning
+- Add new verion of designer for subsection of interface
+- Pass MSA into diversify target?
